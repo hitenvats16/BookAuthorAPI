@@ -6,49 +6,54 @@ A REST API developed in python and Django
 
 ## Installation
 
-Clone Repository into a folder
+### Clone Repository into a folder
 ```bash
   git clone https://github.com/hitenvats16/BookAuthorAPI.git
 ```
 
-Install dependencies with pip3
+### Install dependencies with pip3
 
 ```bash
   pip3 install -r requirements.txt
 ```
 
-Canfe directory to BookAuthorAPI
+### Change directory to BookAuthorAPI
 
 ```bash
   cd BookAuthorAPI/
 ```
 
-Migrating Database
+### Creating .env file and adding content to it
+
+```bash
+  touch .env
+```
+
+After that, you'll need to add `DJANGO_SECRET_KEY` variable with a key to `.env` file
+
+For example: (can be temporarily used in project)
+`DJANGO_SECRET_KEY = 'django-insecure-b260ofpg5o(!vkbgu%df30!rf80r$^k71-!qqjqcld&@d4aak!'`
+
+### Migrating Database
 
 ```bash
   python manage.py makemigrations
   python manage.py makemigrations author
   python manage.py makemigrations books
+  python manage.py migrate
 ```
 
-Generating Random Data in Database (Optional)
+### Generating Random Data in Database (Optional)
 
 ```bash
   python manage.py createdata
 ```
 
-Starting the project
+### Starting the project
 
 ```bash
   python manage.py runserver
 ```
-
-
-## Environment Variables
-
-To run this project, you will need to add the following environment variables to your .env file (created in the root of the project)
-
-`DJANGO_SECRET_KEY`
 
 
 ## API Reference
