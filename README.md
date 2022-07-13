@@ -17,6 +17,12 @@ Install dependencies with pip3
   pip3 install -r requirements.txt
 ```
 
+Canfe directory to BookAuthorAPI
+
+```bash
+  cd BookAuthorAPI/
+```
+
 Migrating Database
 
 ```bash
