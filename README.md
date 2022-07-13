@@ -3,6 +3,9 @@
 
 A REST API developed in python and Django
 
+# Architecture Diagram
+
+![Architecture diagram](diagram/diagram.jpeg?raw=true "Title")
 
 ## Installation
 
