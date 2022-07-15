@@ -14,16 +14,16 @@ A REST API developed in python and Django
   git clone https://github.com/hitenvats16/BookAuthorAPI.git
 ```
 
-### Install dependencies with pip3
-
-```bash
-  pip3 install -r requirements.txt
-```
-
 ### Change directory to BookAuthorAPI
 
 ```bash
   cd BookAuthorAPI/
+```
+
+### Install dependencies with pip3
+
+```bash
+  pip3 install -r requirements.txt
 ```
 
 ### Creating .env file and adding content to it
