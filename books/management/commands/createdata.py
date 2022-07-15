@@ -8,14 +8,38 @@ from books.models import Book
 
 fake = Faker()
 
+import string
+import random
+
 class Command(BaseCommand):
     help = "This command will generate 100 random users and data"
     # genrating random data with faker
+
+    characters = list(string.ascii_letters + string.digits + "!@#$%^&*()")
+
+    def generate_random_password(self):
+        ## length of password from the user
+        length = 20
+
+        ## shuffling the characters
+        random.shuffle(self.characters)
+        
+        ## picking random characters from the list
+        password = []
+        for i in range(length):
+            password.append(random.choice(self.characters))
+
+        ## shuffling the resultant password
+        random.shuffle(password)
+
+        ## converting the list to string
+        return "".join(password)
+
     def generateUsersAndBooks(self):
         # for user
         username = fake.user_name()
         email = fake.email()
-        password = "password@123"
+        password = self.generate_random_password()
         display_name = fake.name()
         mobile = fake.msisdn()
 
