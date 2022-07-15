@@ -1,9 +1,8 @@
 # Views for the user API
 
-from rest_framework import generics, authentication, permissions, status
+from rest_framework import generics, authentication, permissions
 from .serializers import AuthorSerializer
 from rest_framework.response import Response
-from .models import CustomUser
 from rest_framework.authtoken.models import Token
 from rest_framework.decorators import api_view, permission_classes, authentication_classes
 from rest_framework.authentication import TokenAuthentication
@@ -21,16 +20,6 @@ class ManageUserView(generics.RetrieveUpdateAPIView):
         # Retrieve and return the authenticated user
         user = self.request.user
         return user
-
-
-class GetAuthTokenView(generics.CreateAPIView):
-    # create a new author in system
-    serializer_class = AuthorSerializer
-
-    def get_object(self):
-        user = self.request.user
-        token = Token.objects.get_or_create(user=user)
-        return token.key
 
 # Return a List of authors to authenticated user
 
