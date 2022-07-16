@@ -60,6 +60,8 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         n=20
+        file = open('UserWithPass.txt','w')
         for i in range(0,20):
             username , password = self.generateUsersAndBooks()
-            self.stdout.write(self.style.SUCCESS('Successfully created user with username: '+str(username)+' and password: '+str(password)))
+            file.write(str(username)+" "+str(password))
+            self.stdout.write(self.style.SUCCESS('Successfully created user'))
