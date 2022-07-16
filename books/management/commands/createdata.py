@@ -63,5 +63,5 @@ class Command(BaseCommand):
         file = open('UserWithPass.txt','w')
         for i in range(0,20):
             username , password = self.generateUsersAndBooks()
-            file.write(str(username)+" "+str(password))
+            file.write(str(username)+" "+str(password)+'\n')
             self.stdout.write(self.style.SUCCESS('Successfully created user'))
