@@ -12,7 +12,7 @@ class AuthorSerializer(serializers.ModelSerializer):
         model = get_user_model()
         fields = ['email', 'password', 'mobile_phone',
                   'display_name', 'username', 'no_of_books_published']
-        kwargs = {'password': {'min_length': 5, 'write_only': True}}
+        extra_kwargs = {'password': {'min_length': 5, 'write_only': True}}
 
     def create(self, validated_data):
         return get_user_model().objects.create_user(**validated_data)
